@@ -8,6 +8,7 @@ Created on Tue Jul 18 12:53:57 2023
 # Imports
 import streamlit as st
 import joblib
+import os
 
 def main():
     
@@ -24,7 +25,7 @@ def main():
     st.markdown(html_temp, unsafe_allow_html = True)
     
     # model = joblib.load("C:/Users/User/.spyder-py3/model_joblib_gr")
-    model_path = r"C:\Users\User\Desktop\Dataset Trials\ML\model_joblib_gr"
+    model_path = "C:/Users/User/Desktop/Dataset Trials/ML/model_joblib_gr"
     model = joblib.load(model_path)
     
     p1 = st.slider('Enter your age', 18, 100)
