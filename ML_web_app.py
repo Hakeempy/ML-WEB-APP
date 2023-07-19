@@ -23,7 +23,7 @@ def main():
     
     st.markdown(html_temp, unsafe_allow_html = True)
     
-    model = joblib.load("C://Users//User//Desktop//Dataset Trials//ML/model_joblib_gr")
+    model = joblib.load("C://Users//User//Desktop//Dataset Trials//ML//model_joblib_gr")
     
     p1 = st.slider('Enter your age', 18, 100)
     
