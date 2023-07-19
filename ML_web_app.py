@@ -30,7 +30,7 @@ def main():
     # model = joblib.load("C:/Users/User/.spyder-py3/model_joblib_gr")
     
     pkl_pathl = Path(__file__).parents[1] /'model_joblib_gr.joblib'
-    model = joblib.load(pkl_path)
+    model = joblib.load(/'model_joblib_gr.joblib')
     
     p1 = st.slider('Enter your age', 18, 100)
     
