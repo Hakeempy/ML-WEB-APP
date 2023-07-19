@@ -29,7 +29,8 @@ def main():
     
     # model = joblib.load("C:/Users/User/.spyder-py3/model_joblib_gr")
     
-    model = Path(__file__).parents[1] /'model_joblib_gr'
+    pkl_pathl = Path(__file__).parents[1] joblib.load(/'model_joblib_gr')
+    # model = joblib.load(pkl_path)
     
     p1 = st.slider('Enter your age', 18, 100)
     
@@ -63,7 +64,7 @@ def main():
         p6 = 4
         
     if st.button('Predict'):
-        pred = model.predict([[p1,p2,p3,p4,p5,p6]])
+        pred = pkl_pathl.predict([[p1,p2,p3,p4,p5,p6]])
         st.balloons()
         st.success('Your Insurance cost is {}'.format(round(pred[0], 2)))
     
