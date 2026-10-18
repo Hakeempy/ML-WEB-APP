@@ -32,7 +32,8 @@ def main():
     pkl_pathl = Path(__file__).parents[1] /'model_joblib_gr'
     model = joblib.load('model_joblib_gr')
     
-    p1 = st.slider('Enter your age', 18, 100)
+    # Input ranges match the training data (insurance.csv): age 18-64, BMI 15.96-53.13, 0-5 children
+    p1 = st.slider('Enter your age', 18, 64)
     
     s1 = st.selectbox('Sex', ('Male', 'Female'))
     
@@ -41,9 +42,9 @@ def main():
     else:
         p2 = 0
         
-    p3 = st.number_input('Enter your BMI value')
+    p3 = st.number_input('Enter your BMI value', min_value = 15.96, max_value = 53.13, value = 30.4)
         
-    p4 = st.slider('Enter Number of Children', 0,4)
+    p4 = st.slider('Enter Number of Children', 0,5)
     
     s2 = st.selectbox('Smoker', ('Yes', 'No'))
     
@@ -54,11 +55,12 @@ def main():
         
     s3 = st.selectbox('Select Region', ('southwest', 'southeast', 'northwest', 'northeast'))
     
+    # Same encoding as training: southwest 1, southeast 2, northwest 3, northeast 4
     if s3 == 'southwest':
         p6 = 1
     elif s3 == 'southeast':
         p6 = 2
-    elif s3 == 'southwest':
+    elif s3 == 'northwest':
         p6 = 3
     else:
         p6 = 4
